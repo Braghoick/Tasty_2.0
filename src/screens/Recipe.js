@@ -20,7 +20,7 @@ export const Recipe = ({ navigation, route }) => {
   let array = item.instructions;
   //console.log(item);
   return (
-    <ScrollView style={styles.container} stickyHeaderIndices={[0, 1]}>
+    <ScrollView style={styles.container} stickyHeaderIndices={[0]}>
       <View style={styles.imageContainer}>
         <Image
           style={[StyleSheet.absoluteFill, styles.cover]}
@@ -30,7 +30,7 @@ export const Recipe = ({ navigation, route }) => {
         ></Image>
       </View>
       <View style={styles.content}>
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 2 }}>
           <View style={styles.titleContainer}>
             <Text style={styles.titlePrincipal}>{item.name}</Text>
           </View>
@@ -64,7 +64,7 @@ export const Recipe = ({ navigation, route }) => {
         </View>
 
       </View>
-      <View style={{ height: 40 }} />
+      <View style={{ height: 10 }} />
     </ScrollView>
   );
 };
@@ -72,7 +72,7 @@ export const Recipe = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: constants.COLORS.LIGHT,
+    backgroundColor: constants.COLORS.PRIMARY,
   },
   imageContainer: {
     position: "relative",
@@ -87,17 +87,17 @@ const styles = StyleSheet.create({
     position: "relative",
     width,
     paddingBottom: 0,
-    backgroundColor: constants.COLORS.LIGHT,
+    backgroundColor: constants.COLORS.PRIMARY,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
     top: -30,
-    zIndex: 9,
+    zIndex: 20,
   },
   contentSecondary: {
     position: "relative",
     width,
     paddingHorizontal: 30,
-    backgroundColor: constants.COLORS.LIGHT,
+    backgroundColor: constants.COLORS.PRIMARY,
     zIndex: 10,
   },
   titleContainer: {
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   paragraph: {
     fontSize: 15,
     fontWeight: "300",
-    color: constants.COLORS.GRAY,
+    color: constants.COLORS.TEXT_COLOR,
     lineHeight: 22,
     marginTop: 5,
     textAlign: "left",

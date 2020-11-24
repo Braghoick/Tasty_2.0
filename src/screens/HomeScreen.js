@@ -3,12 +3,12 @@ import {
   ScrollView,
   View,
   Text,
-  SafeAreaView,
   StyleSheet,
   FlatList,
   Platform,
   Image
 } from "react-native";
+import { Card } from "react-native-elements";
 import axios from "axios";
 import constants from "../utils/constants";
 import Recipe from "../components/recipes";
@@ -19,10 +19,12 @@ export const HomeScreen = ({navigation, route}) => {
 
     const [recipes, setRecipes] = React.useState([]);
 
+    const imageProfile = 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
+
     const options = {
       method: "GET",
       url: "https://tasty.p.rapidapi.com/recipes/list",
-      params: { from: "0", size: "200", tags: "under_30_minutes" },
+      params: { from: "0", size: "40", tags: "under_30_minutes" },
       headers: {
         "x-rapidapi-key": `${constants.API_KEY}`,
         "x-rapidapi-host": "tasty.p.rapidapi.com",
@@ -42,15 +44,12 @@ export const HomeScreen = ({navigation, route}) => {
     }, [setRecipes]);
 
     return (
-      <SafeAreaView style={styles.container}>
-          <Image
-            style={[styles.img]}
-            source={{ uri: '../images/profile.jpg' }} />
+        <ScrollView style={styles.container} stickyHeaderIndices={[0]}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Hi Chef!!</Text>
           <Text style={styles.subtitle}>What do you want to cook?</Text>
         </View>
-        <ScrollView style={styles.content}  stickyHeaderIndices={[0]}>
+        <View style={styles.content}>
          <FlatList
             style={{ alignSelf: "center" }}
             numColumns={2} // set number of columns
@@ -62,8 +61,8 @@ export const HomeScreen = ({navigation, route}) => {
           keyExtractor={(item) => `${item.id}`}
           contentInset={{ bottom: 80, top: 0 }}
         /> 
+        </View>
         </ScrollView>
-      </SafeAreaView>
     );
 
     
@@ -76,23 +75,28 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS !== "ios" ? 0 : 0,
   },
   content: {
-    flex: 1,
+    flex: 2,
     backgroundColor: constants.COLORS.PRIMARY2,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
+    zIndex: 20,
   },
   title: {
+    marginLeft: 20,
     fontSize: 30,
     marginTop: 60,
-    marginLeft: 23,
+    color: constants.COLORS.LIGHT,
   },
   titleContainer: {
-
+    position: 'relative',
+    zIndex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   subtitle: {
     fontSize: 12,
-    marginLeft: 26,
     marginBottom: 60,
+    color: constants.COLORS.LIGHT,
   },
   img: {
     height: 150,

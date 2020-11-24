@@ -1,0 +1,21 @@
+{
+     "expo":{
+          "name": "Tasty App",
+          "slug": "Tasty App",
+          "version": "1.0.0",
+          "platform": [
+               "android",
+               "ios"
+          ],
+          "ios":{
+               "bundleIdentifier":"cr.ac.ucr.tasty",
+               "buildNumber": "1.0.0"
+          },
+          "android":{
+               "package":"cr.ac.ucr.tasty",
+               "versionCode":1
+          },
+          "description":"",
+          "githubUrl":"https://github.com/PuzzledCrib/Tasty_2.0"
+     }
+}

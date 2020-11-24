@@ -2,10 +2,11 @@
   "dependencies": {
     "@expo/vector-icons": "~10.2.0",
     "@react-native-community/masked-view": "0.1.10",
+    
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
     "axios": "^0.21.0",
-    "expo": "~39.0.0",
+    "expo": "^39.0.4",
     "expo-cli": "^3.28.5",
     "react": "~16.13.0",
     "react-dom": "~16.13.0",
@@ -21,6 +22,11 @@
   },
   "devDependencies": {
     "@babel/core": "7.9.0"
+  },
+  "rnpm": {
+    "assets": [
+	  "./assets/fonts/"
+    ]
   },
   "scripts": {
     "start": "expo start",

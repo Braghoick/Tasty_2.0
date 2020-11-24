@@ -21,7 +21,7 @@ const Router = () => {
                 <MaterialCommunityIcons
                   name="keyboard-backspace"
                   size={24}
-                  color={constants.COLORS.LIGHT}
+                  color={constants.COLORS.TEXT_COLOR}
                   {...props}
                   style={{ marginLeft: 20 }}
                 />
@@ -43,7 +43,7 @@ const Router = () => {
             options={{
               title: "",
               headerBackTitleVisible: false,
-              headerTransparent: false,
+              headerTransparent: true,
             }}
           />
         </Stack.Navigator>

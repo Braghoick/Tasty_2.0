@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 14,
     fontWeight: "300",
-    color: constants.COLORS.GRAY,
+    color: constants.COLORS.TEXT_COLOR,
     lineHeight: 22,
-    textAlign: "start",
+    textAlign: "left",
   },
 });
 

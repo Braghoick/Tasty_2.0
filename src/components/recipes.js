@@ -16,7 +16,7 @@ const recipe = ({ item, navigation }) => {
 
   return (
       <Pressable onPress={loadRecipe}>
-        <Card style={styles.card}>
+        <Card containerStyle={styles.card}>
           <Card.Image style={styles.img} source={{ uri: thumbnail_url }} />
           <Card.Title style={styles.title}>{name}</Card.Title>
         </Card>
@@ -26,30 +26,27 @@ const recipe = ({ item, navigation }) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: constants.COLORS.LIGHT,
+    backgroundColor: constants.COLORS.WARNING,
     borderRadius: 20,
-    width: 150,
-    height: 230,
-    paddingVertical: 20,
+    width: 180,
+    height: 240,
+    paddingVertical: 10,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     position: 'relative',
   },
 
   title: {
     marginTop: 5,
+    marginBottom: 5,
     fontSize: 15,
-    alignItems: 'center',
-    width: 130,
-    height: 55,
-  },
-  subtitle: {
-    fontSize: 12,
-    marginLeft: 26,
+    width: 'auto',
+    height: 'auto',
+    color: constants.COLORS.LIGHT,
   },
   img:{
-    width: 130,
+    width: 160,
     height: 130,
     borderRadius: 20,
   },
