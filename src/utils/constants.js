@@ -5,7 +5,7 @@ module.exports = {
   },
   API_KEY: "9672b65a5dmsh71cee4e54830da9p1985c8jsn60ac4ddf5123",
   COLORS: {
-    WARNING: "#DF317F",
+    WARNING: "#D9628D",
     LIGHT_GRAY: "#FFBC03",
     GRAY: "#ACAEAD",
     LIGHT: "#FFFFFF",
